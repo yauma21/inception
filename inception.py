@@ -2,10 +2,8 @@ from gomatic import GoCdConfigurator, HostRestClient, ExecTask
 from github import Github, GithubException
 
 github = Github()
-me = github.get_user("ivanmoore")
+me = github.get_user("teamoptimization")
 for repo in me.get_repos():
-    if repo.name == 'inception':
-        continue
     try:
         print "configuring", repo.name
         configurator = GoCdConfigurator(HostRestClient("localhost:8153"))
