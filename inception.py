@@ -15,7 +15,7 @@ for repo in me.get_repos():
         job = pipeline\
             .ensure_initial_stage("bootstrap")\
             .ensure_job("configure-pipeline")
-        bootstrap_file_url = "https://raw.githubusercontent.com/ivanmoore/inception/master/bootstrap.py"
+        bootstrap_file_url = "https://raw.githubusercontent.com/yauma21/inception/master/bootstrap.py"
         job.ensure_task(ExecTask(["bash", "-c", "curl -fSs " + bootstrap_file_url + " | python - " + repo.name]))
 
         configurator.save_updated_config()
