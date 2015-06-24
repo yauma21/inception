@@ -1,7 +1,7 @@
 import sys
 from gomatic import GoCdConfigurator, HostRestClient, ExecTask
 
-configurator = GoCdConfigurator(HostRestClient("docker:8153"))
+configurator = GoCdConfigurator(HostRestClient("localhost:8153"))
 
 pipeline_name = sys.argv[1]
 
