@@ -2,11 +2,11 @@ from gomatic import GoCdConfigurator, HostRestClient, ExecTask
 from github import Github, GithubException
 
 github = Github()
-me = github.get_user("teamoptimization")
+me = github.get_user("yauma21")
 for repo in me.get_repos():
     try:
         print "configuring", repo.name
-        configurator = GoCdConfigurator(HostRestClient("localhost:8153"))
+        configurator = GoCdConfigurator(HostRestClient("docker:8153"))
 
         pipeline = configurator\
             .ensure_pipeline_group("auto-created")\
